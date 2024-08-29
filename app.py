@@ -1,10 +1,13 @@
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify, abort, render_template
 
 
-app = Flask(__name__)
-
+app = Flask(__name__, static_folder='static')
 
 books = []
+
+@app.route('/')
+def index():
+   return render_template('index.html')
 
 @app.route('/books', methods=['GET'])
 def get_books():
@@ -35,7 +38,8 @@ def add_book():
 @app.route('/books/<int:book_id>', methods=['PUT'])
 def update_book(book_id): 
     book = next((book for book in books if book['id'] == book_id),None)
-    if book in None:
+    print(book)
+    if book is None:
         abort(404)
     if not request.json:
         abort(400)
@@ -56,4 +60,4 @@ def delete_book(book_id):
     return '',204
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=5000,debug=True)

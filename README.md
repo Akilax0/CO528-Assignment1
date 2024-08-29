@@ -9,3 +9,26 @@
 - Upload the source code to a GitHub repository. (Share the link to the GitHub repository along with your submission)
 
 - Record a screen recording for the demonstration showing the implementation.
+
+# CRUD ASSIGNMENT 
+
+E/17/154
+
+## Application
+
+The CRUD methods are defined for a library management system. 
+
+- C : Create new book entries
+- R : Read book details (all or by id)
+- U : Update book information
+- D : Delete book entry
+
+## Implementation 
+
+The implementaion is done in Flask - Python. 
+The recorded demo shows the application being tested using Postman. 
+
+## Github Repo
+
+https://github.com/Akilax0/CO528-Assignment1
+
